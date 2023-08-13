@@ -1,0 +1,148 @@
+int main() {
+    int num1, num2, num3;
+
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    printf("Digite o terceiro número: ");
+    scanf("%d", &num3);
+
+    // Verificar o maior número
+    int maior = num1;
+    if (num2 > maior) {
+        maior = num2;
+    }
+    if (num3 > maior) {
+        maior = num3;
+    }
+
+    // Verificar o menor número
+    int menor = num1;
+    if (num2 < menor) {
+        menor = num2;
+    }
+    if (num3 < menor) {
+        menor = num3;
+    }
+
+    // Verificar se há valores iguais
+    if (num1 == num2 || num1 == num3 || num2 == num3) {
+        printf("Há pelo menos um valor igual.\n");
+    } else {
+        printf("Não há valores iguais.\n");
+    }
+
+    printf("O maior número é: %d\n", maior);
+    printf("O menor número é: %d\n", menor);
+
+    return 0;
+}
+
+
+
+___________________________________________________________________
+#include <math.h>
+
+int main() {
+    double numero;
+
+    printf("Digite um número: ");
+    scanf("%lf", &numero);
+
+    // Verificar se o número é inteiro
+    if (numero == (int)numero) {
+        printf("O número %lf pertence ao conjunto dos números inteiros.\n", numero);
+    } else {
+        printf("O número %lf não pertence ao conjunto dos números inteiros.\n", numero);
+    }
+
+    // Verificar se o número é racional
+    if (numero == (double)(int)numero) {
+        printf("O número %lf pertence ao conjunto dos números racionais.\n", numero);
+    } else {
+        printf("O número %lf não pertence ao conjunto dos números racionais.\n", numero);
+    }
+
+    // Verificar se o número é natural
+    if (numero > 0 && numero == (int)numero) {
+        printf("O número %lf pertence ao conjunto dos números naturais.\n", numero);
+    } else {
+        printf("O número %lf não pertence ao conjunto dos números naturais.\n", numero);
+    }
+
+    // Verificar se o número é real
+    printf("O número %lf pertence ao conjunto dos números reais.\n", numero);
+
+    // Verificar se o número é irracional
+    if (numero > 0 && numero != (int)numero && !isinf(numero) && isnan(numero)) {
+        printf("O número %lf pertence ao conjunto dos números irracionais.\n", numero);
+    } else {
+        printf("O número %lf não pertence ao conjunto dos números irracionais.\n", numero);
+    }
+
+    return 0;
+}
+___________________________________________________________________
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    if (numero % 2 == 0) {
+        printf("O número %d é par.\n", numero);
+    } else {
+        printf("O número %d não é par.\n", numero);
+    }
+
+    return 0;
+}
+
+
+___________________________________________________________________
+
+int main() {
+    int dia, mes, ano;
+
+    printf("Digite o dia de aniversário: ");
+    scanf("%d", &dia);
+
+    printf("Digite o mês de aniversário: ");
+    scanf("%d", &mes);
+
+    printf("Digite o ano de aniversário: ");
+    scanf("%d", &ano);
+
+    int dataValida = 1;  // assume que a data é válida inicialmente
+
+    // Verifica se o dia é válido
+    if (dia <= 0 || dia > 30) {
+        dataValida = 0;
+        printf("Dia inválido.\n");
+    }
+
+    // Verifica se o mês é válido
+    if (mes <= 0 || mes > 12) {
+        dataValida = 0;
+        printf("Mês inválido.\n");
+    }
+
+    // Verifica se o ano é válido
+    if (ano != 2000) {
+        dataValida = 0;
+        printf("Ano inválido.\n");
+    }
+
+    // Exibe a mensagem de data válida ou inválida
+    if (dataValida) {
+        printf("A data de aniversário é válida.\n");
+    } else {
+        printf("A data de aniversário é inválida.\n");
+    }
+
+    return 0;
+}
